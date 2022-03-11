@@ -1,0 +1,87 @@
+<html lang="en">
+    <head>
+        <title>4.4-flex-demo-website-layout</title>
+        <style type="text/css">
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: verdana;
+        text-align: center;
+
+        height: 100vh;
+      }
+
+      .layout-container {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+      }
+
+      .flx-header {
+        padding: 2rem;
+        border: 1px solid black;
+        background-color:lightcoral;
+      }
+
+      .flx-main-container {
+        display: flex;
+        flex: 1;
+      }
+
+      .flx-nav, .flx-aside {
+        background-color:lightblue;
+        padding: 1rem;
+        flex: 1;
+        border: 1px solid black;
+      }
+
+      .flx-article-section {
+        background-color: lightsalmon;
+        padding: 1rem;
+        border: 1px solid black;
+        flex: 4;
+      }
+
+      .flx-footer {
+        padding: 1rem;
+        background-color:#A6D5AE;
+        font-size: 0.5rem;
+        font-weight: bold;
+        letter-spacing: 1rem;
+      }
+
+      @media all and (max-width: 599px) {
+
+        .flx-main-container {
+          flex-direction: column;
+        }
+
+      }
+
+
+        </style>
+    </head>
+    <body>
+
+        <main class="layout-container">
+
+            <header class="flx-header">Header</header>
+      
+            <main class="flx-main-container">
+      
+              <nav class="flx-nav">Navigation</nav>
+      
+              <article class="flx-article-section">
+                Main Content Article 
+              </article>
+      
+              <aside class="flx-aside">Side Ad Bar</aside>
+      
+            </main>
+      
+            <footer class="flx-footer">Footer</footer>
+          
+              
+    </body>
+</html>

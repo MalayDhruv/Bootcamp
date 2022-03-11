@@ -1,0 +1,63 @@
+1) 
+Database create: 
+CREATE DATABASE demo_db;
+
+2)
+Table create:
+CREATE TABLE course_tbl(
+    c_id int(11),
+    c_name varchar(20));
+
+3)
+//For Insert Data
+INSERT INTO `course_tbl`(`C_id`, `C_name`) VALUES ('1','Database'),
+INSERT INTO `course_tbl`(`C_id`, `C_name`) VALUES ('2','Programing'),
+INSERT INTO `course_tbl`(`C_id`, `C_name`) VALUES ('3','QA'),
+INSERT INTO `course_tbl`(`C_id`, `C_name`) VALUES ('4','BI');
+
+
+4)
+WHERE:
+SELECT * FROM `employee` WHERE `c_name`='Database';
+
+5)
+//For Reference Key
+ALTER TABLE grade_tbl
+ADD FOREIGN KEY (C_id) REFERENCES course_tbl(C_id);
+
+6)
+//For Delete
+DELETE FROM `student_tbl` WHERE 2
+
+7)
+//For Update
+UPDATE `student_tbl` SET `Student_id`='1',`Student_name`='Dhruv' WHERE 1
+
+8)
+//Inner join
+SELECT grade.g_id, course.c_name, student.s_name
+FROM grade
+INNER JOIN course ON grade.c_id=course.c_id INNER JOIN student ON grade.s_id=student.s_id
+
+9)
+//outer join
+SELECT course_tbl.C_name, student_tbl.Student_name
+FROM grade_tbl
+FULL OUTER JOIN Orders ON course_tbl.C_name=student_tbl.Student_name
+ORDER BY student_tbl.Student_name; 
+
+10)
+// order by
+SELECT C_name FROM course_tbl
+ORDER BY C_name
+
+11)
+//distinct
+SELECT DISTINCT Grade
+FROM grade_tbl
+ORDER BY Grade 
+
+12)
+//like
+SELECT * FROM student_tbl
+WHERE Student_name LIKE 'm%';

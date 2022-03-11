@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hover Menu</title>
+        <style type="text/css">
+        #main li ul li{display: none;}
+        #main li:hover ul li{display: block;}
+        #main li:hover ul li ul li{display: none;}
+        #main li ul li:hover ul li{display: block;}
+        #main li ul li:hover ul li ul li{display: none;}
+        #main li ul li ul li:hover ul li{display: block;}            
+        </style>
+    </head>
+    <body>
+        <ul id="main">
+            <li>Google
+                <ul>
+                    <li>Gmail
+                        <ul>
+                            <li>sing in</li>
+                            <li>sing out</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>   
+            <li>Facebook</li>
+            <li>Microsoft</li>
+            <li>Instagram</li>
+            <li>Snapchat</li>
+        </ul>
+    </body>
+</html>

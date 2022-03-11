@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Button Click All Events</title>
+        <Style id="text/css">
+            body  {
+                    background-image: url("img2.jpg");
+                    background-position: fixed;
+                    background-size: auto;
+                    background-repeat: no-repeat;
+                  }
+        </style>
+
+        <Script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></Script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#btnshow").attr("disabled",true);
+
+                $('#btnhide').click(function(){
+                    if(confirm("Sure??")){
+                        $('#MyDiv').hide(2000);
+                        $("#btnshow").attr("disabled",false);
+                        $(this).attr("disabled",true);
+                    }
+                });
+                
+                $('#btnshow').click(function(){
+                    if(confirm("Are You Sure?")){
+                        $('#MyDiv').show(2000);
+                        $("#btnhide").attr("disabled",false);
+                        $(this).attr("disabled",true);
+                    }
+                });
+                $('#btntoggle').click(function(){
+                    if(confirm("Sure??")){
+                        $('#MyDiv').toggle(2000);
+                    }
+                });
+        
+
+            $('#btnplus').click(function(){
+                var MDH=parseInt($("#MyDiv").css('height'));
+                var MDW=parseInt($("#MyDiv").css('width'));
+                if(MDH<=500)
+                {
+                    MDH+=10;
+                    MDW+=10;
+                    $("#MyDiv").css('height',MDH);
+                    $("#MyDiv").css('width',MDW);
+                }
+                else
+                {
+                    alert("More then 500px is not possible");
+                }
+            });
+            $("#BtnMinus").click(function(){
+						var MDH=parseInt($("#MyDiv").css('height'));
+							var MDW=parseInt($("#MyDiv").css('width'));
+							if(MDH>=20)
+							{
+								MDH-=10;
+								MDW-=10;
+								$("#MyDiv").css('height',MDH);
+								$("#MyDiv").css('width',MDW);
+							}
+							else{
+								alert("Less than 20px is not possible..!!");
+							}
+					});
+            
+            
+            $("#BtnFadeOut").attr("disabled",true);
+			
+            $("#BtnFadeIn").click(function(){
+                if(confirm("Are You Sure..??"))
+                {
+                    $("#mydiv1").fadeIn(1000);
+                    $("#mydiv2").fadeIn(2000);
+                    $("#mydiv3").fadeIn(3000);
+                    $("#BtnFadeOut").attr("disabled",false);
+                    $(this).attr("disabled",true);
+                }
+            });
+            $("#BtnFadeOut").click(function(){
+                if(confirm("Are You Sure..??"))
+                {
+                    $("#mydiv1").fadeOut(1000);
+                    $("#mydiv2").fadeOut(2000);
+                    $("#mydiv3").fadeOut(3000);
+                    $("#BtnFadeIn").attr("disabled",false);
+                    $(this).attr("disabled",true);
+                }
+            });
+            $("#BtnFadeToggle").click(function(){
+                if(confirm("Are You Sure..??"))
+                {
+                    $("#mydiv1").fadeToggle(1000);
+                    $("#mydiv2").fadeToggle(2000);
+                    $("#mydiv3").fadeToggle(3000);
+                }
+            });
+
+         });
+    </script>
+    </head>
+    <body>
+        
+        <div id="MyDiv" style="height: 310px;width: 300px; background-color: blue;"></div><hr/>
+        <button id="btnhide">Hide</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id="btnshow">Show</button><hr/>
+        <button id="btntoggle">Hide</button><hr/>
+        <button id="btnplus" style="font-size:xx-large;">+</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id="BtnMinus"style="font-size:xx-large;">-</button><hr/>
+       
+        <button id="BtnFadeIn">Click Me For Fade In</button>&nbsp;&nbsp;<button id="BtnFadeOut">Click Me For Fade Out</button>&nbsp;&nbsp;<button id="BtnFadeToggle">Click Me For Fade In / Out Toggle</button>
+		<hr/>
+        <div id="mydiv1" style="height:100px;width:100px;background-color:red;display:none;"></div><br />
+		<div id="mydiv2" style="height:100px;width:100px;background-color:blue;display:none;"></div><br />
+		<div id="mydiv3" style="height:100px;width:100px;background-color:green;display:none;"></div><br />
+
+    </body>
+</html>
